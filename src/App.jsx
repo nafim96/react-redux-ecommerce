@@ -8,6 +8,8 @@ import {
   Switch
 } from 'react-router-dom'
 import DetailProduct from './components/Products/DetailProduct';
+// import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import Login from './components/Login/Login';
 
 function App() {
   return (
@@ -21,7 +23,11 @@ function App() {
           </Route>
           <Route path="/product/:id">
             <DetailProduct />
+            <Login></Login>
           </Route>
+          {/* <PrivateRoute>
+
+          </PrivateRoute> */}
         </Switch>
       </Router>
     </div>
