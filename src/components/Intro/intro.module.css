@@ -1,0 +1,12 @@
+.link {
+    background: #fff;
+    padding: 10px 20px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    text-decoration: none !important;
+    transition: all .3s ease-in-out;
+}
+.link:hover {
+    background-color: #ddd;
+    color: darkcyan;
+}

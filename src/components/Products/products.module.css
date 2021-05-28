@@ -1,0 +1,50 @@
+.card {
+    transition: all .2s ease-in-out;
+    margin: auto;
+    }
+.card:hover {
+    transform: translateY(-5px)
+}
+.card a {
+    text-decoration: none !important;
+    color: #313131;
+}
+.card .cardImg {
+    height: 250px;
+    padding: 20px;
+}
+.card .cardImg img {height: 100%;}
+
+.details {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 50px 0;
+}
+.details img {
+    width: 100%;
+     padding: 10px;
+      border-right: 1px solid #ddd;
+}
+.details h1 {
+    color: royalblue;
+}
+.details .price {
+    width: 100px;
+    padding: 10px 0;
+    border-radius: 3px;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    background: orangered;
+}
+.details button {
+    border: 0;
+    background: royalblue;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all .2s ease-in-out;
+}
+.details button:hover {
+    background: orangered;
+}
