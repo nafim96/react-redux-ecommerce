@@ -10,8 +10,9 @@ import {
 import DetailProduct from './components/Products/DetailProduct';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Login from './components/Login/Login';
-import DashBoard from './components/DashBoard/DashBoard';
+// import DashBoard from './components/DashBoard/DashBoard';
 import { createContext, useState } from 'react';
+import Admin from './components/Admin/Admin';
 export const UserContext = createContext();
 
 function App() {
@@ -34,7 +35,8 @@ function App() {
             <DetailProduct />
             {/* login working perfectly */}
             <Login></Login> 
-            <DashBoard></DashBoard>
+            {/* <DashBoard></DashBoard> */}
+            <Admin></Admin>
           </Route>
           <Route path="/chekout">
             <h1>Stripe payment method</h1>

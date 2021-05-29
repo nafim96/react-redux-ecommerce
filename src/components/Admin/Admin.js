@@ -138,7 +138,7 @@ const Admin = () => {
                                 <p id="manageProducts" onClick={handleClickForManageServices} className="row menu">Manage Services</p>
                                 <p id="addProducts" onClick={handleClickForAddService} className="row menu">Add Service</p>
                                 <p id="editProducts" onClick={handleClickForMakeAdmin} className="row menu">Make Admin</p>
-                                <p id="editProducts" onClick={handleClickForOrderList} className="row menu">Order List</p>
+                                {/* <p id="editProducts" onClick={handleClickForOrderList} className="row menu">Order List</p> */}
                             </div>
                         </div>
                     </div>
@@ -188,10 +188,10 @@ const Admin = () => {
                         </div>}
 
                         {/* all orders list */}
-                        {orderList && <div>
-                            <h1>All orders list</h1>
+                        {/* {orderList && <div> */}
+                            {/* <h1>All orders list</h1> */}
                             {/* <AllOrders></AllOrders> */}
-                        </div>}
+                        {/* </div>} */}
 
                     </div>
                 </div>
