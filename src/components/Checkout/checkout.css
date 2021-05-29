@@ -1,0 +1,14 @@
+.productPart {
+    padding:  50px;
+}
+.paymentPart {
+    background: #dddddd7c;
+    padding:  50px;
+    height: 100%;
+}
+
+
+.price>table {
+    width: 100%;
+    text-align: center;
+}
