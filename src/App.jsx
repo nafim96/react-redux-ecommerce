@@ -8,11 +8,16 @@ import {
   Switch
 } from 'react-router-dom'
 import DetailProduct from './components/Products/DetailProduct';
-// import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Login from './components/Login/Login';
+import DashBoard from './components/DashBoard/DashBoard';
+import { createContext, useState } from 'react';
+export const UserContext = createContext();
 
 function App() {
+  const [loggedInUser,setLoggedInUser]= useState({});
   return (
+    <UserContext.Provider value={[loggedInUser,setLoggedInUser]}>
     <div className="App">
       <Router>
         <Header />
@@ -21,16 +26,30 @@ function App() {
             <Intro />
             <Products />
           </Route>
-          <Route path="/product/:id">
-            <DetailProduct />
+          <Route path="/login">
             <Login></Login>
           </Route>
-          {/* <PrivateRoute>
 
+          <Route path="/product/:id">
+            <DetailProduct />
+            {/* login working perfectly */}
+            <Login></Login> 
+            <DashBoard></DashBoard>
+          </Route>
+          <Route path="/chekout">
+            <h1>Stripe payment method</h1>
+          </Route>
+          
+          {/* <PrivateRoute path="/product/:id">
+            // requires email from redux to work properly
+            <DetailProduct />
+            <Login></Login> 
+            <DashBoard></DashBoard>
           </PrivateRoute> */}
         </Switch>
       </Router>
     </div>
+    </UserContext.Provider>
   );
 }
 
