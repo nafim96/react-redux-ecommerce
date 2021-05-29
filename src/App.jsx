@@ -10,9 +10,9 @@ import {
 import DetailProduct from './components/Products/DetailProduct';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Login from './components/Login/Login';
-// import DashBoard from './components/DashBoard/DashBoard';
 import { createContext, useState } from 'react';
 import Admin from './components/Admin/Admin';
+import BuyService from './components/BuyService/BuyService';
 export const UserContext = createContext();
 
 function App() {
@@ -37,6 +37,7 @@ function App() {
             <Login></Login> 
             {/* <DashBoard></DashBoard> */}
             <Admin></Admin>
+            <BuyService></BuyService>
           </Route>
           <Route path="/chekout">
             <h1>Stripe payment method</h1>
