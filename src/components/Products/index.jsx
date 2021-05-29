@@ -1,13 +1,11 @@
 import axios from "axios";
 import { useEffect } from "react";
-import { Container, Row } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import { setProducts } from "../../redux/actions/products_Actions";
 import SingleProducts from "./SingleProducts";
 
 const Products = () => {
 
-    const products = useSelector(state => state.totalProducts.products)
     const dispatch = useDispatch()
     const loadProducts = async () => {
         const response = await axios

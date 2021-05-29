@@ -1,4 +1,4 @@
-import { Jumbotron } from "react-bootstrap"
+
 import classes from './intro.module.css'
 
 const Intro = () => {

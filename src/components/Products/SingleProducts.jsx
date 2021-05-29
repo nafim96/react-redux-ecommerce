@@ -1,4 +1,4 @@
-import { Card, Col } from "react-bootstrap"
+import { Card } from "react-bootstrap"
 import MySpinner from '../Spinner'
 import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"
@@ -17,21 +17,19 @@ const SingleProducts = () => {
                 productsToMap.map(product => {
                     const { id, title, image, price, category } = product
                     return (
-                        <div className="col-md-4 col-sm-2" style={{ margin: '15px' }}>
+                        <div className="col-md-4 col-sm-6">
                             <div className={classes.card}>
                                 <Link to={`/product/${id}`}>
-                                    <Card style={{ width: '18rem' }} >
-                                        <div className={classes.cardImg}>
-                                            <Card.Img variant="top" src={image} />
-                                        </div>
-                                        <Card.Body>
-                                            <Card.Title style={{ fontWeight: '600' }}>{title}</Card.Title>
-                                            <Card.Text>
-                                                <p style={{ fontWeight: '600' }}>$ {price}</p>
-                                                <p><small>{category}</small></p>
-                                            </Card.Text>
-                                        </Card.Body>
-                                    </Card>
+                                    <div className={classes.cardImg}>
+                                        <Card.Img variant="top" src={image} />
+                                    </div>
+                                    <div>
+                                        <h4 style={{ fontWeight: '600' }}>{title}</h4>
+                                        <p>
+                                            <p style={{ fontWeight: '600' }}>$ {price}</p>
+                                            <p><small>{category}</small></p>
+                                        </p>
+                                    </div>
                                 </Link>
                             </div>
                         </div>

@@ -1,14 +1,14 @@
-import React, { useContext } from 'react';
+import { useSelector } from 'react-redux';
 import { Redirect, Route } from 'react-router-dom';
-import { UserContext } from '../../App';
 
 const PrivateRoute = ({ children, ...rest }) => {
-    const [loggedInUser] = useContext(UserContext); //UserContext
+    const user = useSelector(state => state.user.user)
+    console.log(user)
     return (
         <Route
             {...rest}
             render={({ location }) =>
-                loggedInUser.email ? (
+                user?.email ? (
                     children
                 ) : (
                     <Redirect

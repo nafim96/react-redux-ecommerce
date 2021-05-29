@@ -20,4 +20,11 @@ const removeDetailProduct = () => {
     })
 }
 
-export { setProducts, detailProduct, removeDetailProduct }
+const setUser = user => {
+    return ({
+        type: ActionTypes.SET_USER,
+        payload: user
+    })
+}
+
+export { setProducts, detailProduct, removeDetailProduct, setUser }

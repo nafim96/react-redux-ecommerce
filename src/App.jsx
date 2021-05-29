@@ -9,15 +9,14 @@ import {
 } from 'react-router-dom'
 import DetailProduct from './components/Products/DetailProduct';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
-import Login from './components/Login/Login';
-import DashBoard from './components/DashBoard/DashBoard';
-import { createContext, useState } from 'react';
-export const UserContext = createContext();
+import Login from './components/Authentication/Login';
+import AddProduct from './components/DashBoard/AddProduct/AddProduct';
+import MakeAdmin from './components/DashBoard/MakeAdmin/MakeAdmin';
+import ManageProduct from './components/DashBoard/ManageProduct/ManageProduct';
+import Checkout from './components/Checkout/Checkout';
 
 function App() {
-  const [loggedInUser,setLoggedInUser]= useState({});
   return (
-    <UserContext.Provider value={[loggedInUser,setLoggedInUser]}>
     <div className="App">
       <Router>
         <Header />
@@ -27,19 +26,27 @@ function App() {
             <Products />
           </Route>
           <Route path="/login">
-            <Login></Login>
+            <Login />
           </Route>
-
           <Route path="/product/:id">
             <DetailProduct />
-            {/* login working perfectly */}
-            <Login></Login> 
-            <DashBoard></DashBoard>
           </Route>
+          <PrivateRoute path="/checkout">
+            <Checkout />
+          </PrivateRoute>
+          <PrivateRoute path="/addProduct">
+            <AddProduct />
+          </PrivateRoute>
+          <PrivateRoute path="/makeAdmin">
+            <MakeAdmin />
+          </PrivateRoute>
+          <PrivateRoute path="/manageProduct">
+            <ManageProduct />
+          </PrivateRoute>
           <Route path="/chekout">
             <h1>Stripe payment method</h1>
           </Route>
-          
+
           {/* <PrivateRoute path="/product/:id">
             // requires email from redux to work properly
             <DetailProduct />
@@ -49,7 +56,6 @@ function App() {
         </Switch>
       </Router>
     </div>
-    </UserContext.Provider>
   );
 }
 

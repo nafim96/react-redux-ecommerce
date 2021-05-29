@@ -11,21 +11,15 @@
 }
 
 .menu-container {
-    margin-top: 50px;
+    padding-top: 50px;
 }
 
 .menu-div {
-    height: 600px;
-    border-radius: 10px;
-}
-
-.main-div {
-    width: 800px;
+    height: 100vh;
 }
 
 .card-width {
     border: 1px solid white;
-    border-radius: 10px;
 }
 
 .btnImg {

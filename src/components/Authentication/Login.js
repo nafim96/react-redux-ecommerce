@@ -2,17 +2,16 @@ import React from 'react';
 import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from './firebase.config';
-// import { useContext } from 'react';
-// import { UserContext } from '../../App';
+
 import { useHistory, useLocation } from 'react-router';
 import { useState } from 'react';
-// import Navbar from '../Shared/Navbar/Navbar';
+import { useDispatch } from 'react-redux';
+import { setUser } from '../../redux/actions/products_Actions';
 
 const Login = () => {
-    const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
+
     const [newUser, setNewUser] = useState(false);
-    //   const [loggedInUser, setLoggedInUser] = useContext(); //UserContext
+    const dispatch = useDispatch()
     let history = useHistory();
     let location = useLocation();
     let { from } = location.state || { from: { pathname: "/" } };
@@ -25,112 +24,12 @@ const Login = () => {
         firebase.auth()
             .signInWithPopup(provider)
             .then((result) => {
-                // var credential = result.credential;
-                // var token = credential.accessToken;
                 var { displayName, email, photoURL } = result.user;
-                const signedInUser = { name: displayName, email: email, photoURL: photoURL };
-                signedInUser.isSignedIn = true;
-                // setLoggedInUser(signedInUser);
+                const userData = { name: displayName, email: email, photoURL: photoURL };
+                dispatch(setUser(userData))
                 history.replace(from);
-                console.log(signedInUser); //email, userName, Photo URL
             })
-            .catch((error) => {
-                // var errorCode = error.code;
-                // var errorMessage = error.message;
-                // var email = error.email;
-                // var credential = error.credential;
-
-            });
-    }
-
-    //   const handleBlur = (event) => {
-    //     let isFieldValid;
-    //     if (event.target.name === 'email') {
-    //       isFieldValid = /\S+@\S+\.\S+/.test(event.target.value);
-    //     }
-
-    //     if (!newUser) {
-    //       console.log('inside email same?');
-    //       if (event.target.name === 'password') {
-    //         setPassword(event.target.value);
-    //         console.log('inside password');
-    //       }
-    //       if (event.target.name === 'confirmPassword') {
-    //         setConfirmPassword(event.target.value);
-    //         console.log('inside confirmPassword');
-    //       }
-    //     }
-
-    //     if (event.target.name === 'password') {
-    //       const isPasswordValid = event.target.value.length > 6;
-    //       const passwordHasNumber = /\d{1}/.test(event.target.value);
-    //       isFieldValid = isPasswordValid && passwordHasNumber;
-    //     }
-
-    //     if (event.target.name === 'name') {
-    //       isFieldValid = event.target.value.length > 2;
-    //       console.log("user name condition", event.target.value, isFieldValid);
-    //     }
-    //     // if (isFieldValid) {
-    //     //   const newUserInfo = { ...loggedInUser };
-    //     //   newUserInfo[event.target.name] = event.target.value;
-    //     //   setLoggedInUser(newUserInfo);
-    //     // }
-    //   }
-
-    // email sign up firebase
-    //   const handleEmailSignIn = (event) => {
-    //     if (!newUser && loggedInUser.email && loggedInUser.password && password === confirmPassword && password.length > 0 && confirmPassword.length > 0 && confirmPassword === password) {
-    //       console.log('submitting');
-    //       firebase.auth().createUserWithEmailAndPassword(loggedInUser.email, loggedInUser.password)
-    //         .then((userCredential) => {
-    //           const newUserInfo = { ...loggedInUser };
-    //           newUserInfo.error = '';
-    //           newUserInfo.success = true;
-    //           setLoggedInUser(newUserInfo);
-    //           updateUserInformation(loggedInUser.name);
-    //           history.replace(from);
-    //         })
-    //         .catch((error) => {
-    //           const newUserInfo = { ...loggedInUser };
-    //           newUserInfo.success = false;
-    //           newUserInfo.error = error.message;
-    //           setLoggedInUser(newUserInfo);
-    //         });
-    //     }
-
-    //     // email sign in(login)
-    //     if (newUser && loggedInUser.email && loggedInUser.password) {
-    //       firebase.auth().signInWithEmailAndPassword(loggedInUser.email, loggedInUser.password)
-    //         .then((userCredential) => {
-    //           const newUserInfo = { ...loggedInUser };
-    //           newUserInfo.error = '';
-    //           newUserInfo.success = true;
-    //           newUserInfo.name = userCredential.user.displayName;
-    //           newUserInfo.isSignedIn = true;
-    //           console.log('sign in with email & pass', userCredential.user.displayName);
-    //           setLoggedInUser(newUserInfo);
-    //           history.replace(from);
-    //         })
-    //         .catch((error) => {
-    //           const newUserInfo = { ...loggedInUser };
-    //           newUserInfo.success = false;
-    //           newUserInfo.error = error.message;
-    //           setLoggedInUser(newUserInfo);
-    //         });
-    //     }
-    //     event.preventDefault();
-    //   }
-
-    const updateUserInformation = (name) => {
-        const user = firebase.auth().currentUser;
-        user.updateProfile({
-            displayName: name
-        }).then(function () {
-            console.log('user name updated successfully');
-        }).catch(function (error) {
-            console.log(error);
-        });
+            .catch(err => err.message);
     }
 
     return (
@@ -246,12 +145,6 @@ const Login = () => {
 
             </div>
             }
-
-            {/* <div className="col-md-3 container">
-        <p style={{ color: 'red' }}>{loggedInUser.error}</p>
-        {loggedInUser.success && <p style={{ color: 'green' }}>User {newUser ? 'Logged in' : 'created'} successfully</p>}
-        {(confirmPassword !== password) && <p style={{ color: 'red' }}>Password not matching</p>}
-      </div> */}
         </div>
     );
 };
