@@ -64,17 +64,17 @@ const Checkout = () => {
                                                 </tr>
                                                 <tr>
                                                     <td className="py-2">VAT (10%)</td>
-                                                    <td>${vat}</td>
+                                                    <td>${Math.floor(vat)}</td>
                                                 </tr>
                                                 <tr>
                                                     <td className="py-2"><b>Total</b></td>
-                                                    <td><b>{price + vat}</b></td>
+                                                    <td><b>{Math.floor(price + vat)}</b></td>
                                                 </tr>
                                             </tbody>
                                         </table>
                                     </div>
                                     <div class="d-grid my-5">
-                                        <input class="btn btn-warning" type="submit" value={'Pay $' + (price + vat)} />
+                                        <input class="btn btn-warning" type="submit" value={'Pay $' + (Math.floor(price + vat))} />
                                     </div>
                                 </form>
                             </div>
