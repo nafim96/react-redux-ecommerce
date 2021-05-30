@@ -3,8 +3,9 @@ import { Nav, Navbar } from "react-bootstrap"
 import { Link } from "react-router-dom"
 
 const Navigation = () => {
+    let width = window.innerWidth
     return (
-        <div className={`container ${classes.navbar}`}>
+        <div className={`${width > 767 ? 'container' : 'container-fluid'} ${classes.navbar}`}>
             <Navbar sticky="top" collapseOnSelect expand="lg" variant="light">
                 <Navbar.Brand style={{fontSize: '35px'}}><Link to="/">Redux Hub</Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />

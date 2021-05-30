@@ -1,13 +1,18 @@
 import { useSelector } from "react-redux"
+import { useHistory } from "react-router"
 import './checkout.css'
 
 const Checkout = () => {
 
+    const history = useHistory()
     const user = useSelector(state => state.user.user)
     let product = useSelector(state => state.singleProduct.product)
     const { title, price, image, description } = product
     let vat = price * 10 / 100
-    console.log(product)
+    const handleSubmit = () => {
+        alert('Thank you for your order !')
+        history.push('/')
+    }
 
     return (
         <>
@@ -16,7 +21,10 @@ const Checkout = () => {
                     <div className="row">
                         <div className="col-md-6">
                             <div className="productPart">
-                                <div className="d-flex justify-content-center">
+                                <h1>Hi <span style={{ color: 'royalblue' }}>{user.name},</span></h1>
+                                <p>This is your selected product</p>
+                                <hr />
+                                <div className="d-flex justify-content-between">
                                     <h5>{title}</h5>
                                     <p className="_price">${price}</p>
                                 </div>
@@ -32,7 +40,7 @@ const Checkout = () => {
                             <div className="paymentPart">
                                 <h2>Payment Details</h2>
                                 <p>Complete your purchase by providing your payment details</p>
-                                <form className="pt-4">
+                                <form onSubmit={handleSubmit} className="pt-4">
                                     <div class="form-group mb-3">
                                         <label htmlFor="name">Your Name</label>
                                         <input type="text" name="name" class="form-control" id="name" defaultValue={user.name} required />

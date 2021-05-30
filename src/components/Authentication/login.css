@@ -4,3 +4,9 @@
     border-radius: 15px;
 }
 .myform h3 {color: royalblue;}
+
+@media (max-width: 767px) {
+    .myform {
+        width: 80%;
+    }
+}

@@ -7,7 +7,7 @@ import classes from './products.module.css'
 const SingleProducts = () => {
 
     const products = useSelector(state => state.totalProducts.products)
-    const productsToMap = products.slice(0, 18)
+    const productsToMap = products?.slice(0, 18)
     return (
         <>
             {
@@ -26,7 +26,7 @@ const SingleProducts = () => {
                                     <div>
                                         <h4 style={{ fontWeight: '600' }}>{title}</h4>
                                         <p>
-                                            <p style={{ fontWeight: '600' }}>$ {price}</p>
+                                            <p style={{ fontWeight: '600' }}>$ {price}</p> <hr />
                                             <p><small>{category}</small></p>
                                         </p>
                                     </div>

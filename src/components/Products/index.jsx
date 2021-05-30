@@ -13,7 +13,7 @@ const Products = () => {
             .catch((err) => {
                 console.log(err);
             });
-        dispatch(setProducts(response.data));
+        dispatch(setProducts(response?.data));
     };
 
     useEffect(() => {
@@ -21,7 +21,7 @@ const Products = () => {
     }, []);
     return (
         <section style={{paddingBottom: '50px'}}>
-            <div className="container">
+            <div className="container-fluid">
                 <div className="row">
                     <SingleProducts />
                 </div>

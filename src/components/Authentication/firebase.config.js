@@ -1,9 +1,9 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyCEUKjIKaPZtzgwwm6C1_rQaUKrDeYnnqc",
-  authDomain: "pro-repair-service.firebaseapp.com",
-  projectId: "pro-repair-service",
-  storageBucket: "pro-repair-service.appspot.com",
-  messagingSenderId: "641644208442",
-  appId: "1:641644208442:web:21628e1155ccb1a57c3003"
+  apiKey: "AIzaSyAq4F7lx0QnkZ3Y3UtT03jir0_MU6cY3yQ",
+  authDomain: "redux-hub.firebaseapp.com",
+  projectId: "redux-hub",
+  storageBucket: "redux-hub.appspot.com",
+  messagingSenderId: "1011328691444",
+  appId: "1:1011328691444:web:12a3f8b23af769b21c42a1"
 };
 export default firebaseConfig;

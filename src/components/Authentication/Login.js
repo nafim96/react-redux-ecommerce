@@ -59,7 +59,7 @@ const Login = () => {
 
                         <button type="submit" className="btn btn-primary btn-block">Login</button>
                         <p className="text-center py-3">
-                            Don't have an account? <p style={{ display: 'inline-block', color: 'blue', textDecoration: 'underline' }} onClick={() => setNewUser(!newUser)}> Create an account</p>
+                            Don't have an account? <span style={{ color: 'royalblue', cursor: 'pointer' }} onClick={() => setNewUser(!newUser)}> Create an account</span>
                         </p>
                     </form>
 
@@ -111,7 +111,7 @@ const Login = () => {
 
                         <button type="submit" className="btn btn-primary btn-block">Create an account</button>
                         <p className="text-center py-3">
-                            Already have an account? <span style={{ color: 'blue', textDecoration: 'underline' }} onClick={() => setNewUser(!newUser)}>Login</span>
+                            Already have an account? <span style={{ color: 'royalblue', cursor: 'pointer' }} onClick={() => setNewUser(!newUser)}>Login</span>
                         </p>
                         <p className="text-center">..................Or..................</p>
                     </form>
