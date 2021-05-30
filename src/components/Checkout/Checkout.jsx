@@ -18,7 +18,7 @@ const Checkout = () => {
                             <div className="productPart">
                                 <div className="d-flex justify-content-center">
                                     <h5>{title}</h5>
-                                    <p>${price}</p>
+                                    <p className="_price">${price}</p>
                                 </div>
                                 <div className="text-center">
                                     <img className="w-50" src={image} alt="" />
@@ -30,9 +30,9 @@ const Checkout = () => {
                         </div>
                         <div className="col-md-6">
                             <div className="paymentPart">
-                                <h4>Payment Details</h4>
+                                <h2>Payment Details</h2>
                                 <p>Complete your purchase by providing your payment details</p>
-                                <form className="pt-5">
+                                <form className="pt-4">
                                     <div class="form-group mb-3">
                                         <label htmlFor="name">Your Name</label>
                                         <input type="text" name="name" class="form-control" id="name" defaultValue={user.name} required />
@@ -66,7 +66,7 @@ const Checkout = () => {
                                         </table>
                                     </div>
                                     <div class="d-grid my-5">
-                                        <input class="btn btn-primary" type="submit" value={'Pay $' + (price + vat)} />
+                                        <input class="btn btn-warning" type="submit" value={'Pay $' + (price + vat)} />
                                     </div>
                                 </form>
                             </div>

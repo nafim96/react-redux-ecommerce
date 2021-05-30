@@ -1,12 +1,6 @@
-.link {
-    background: #fff;
-    padding: 10px 20px;
-    border: 2px solid #ddd;
-    border-radius: 5px;
-    text-decoration: none !important;
-    transition: all .3s ease-in-out;
+.intro h1 {
+    font-size: 2rem;
 }
-.link:hover {
-    background-color: #ddd;
-    color: darkcyan;
+.intro p {
+    font-size: 1.3rem;
 }

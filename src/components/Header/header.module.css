@@ -1,0 +1,16 @@
+.navbar {
+
+}
+.navbar a {
+    text-decoration: none;
+    color: royalblue;
+}
+.navbar .navLink a{
+    color: #666 !important;
+    font-weight: 300;
+    font-size: 1.3rem;
+    transition: all .2s ease-in-out;
+}
+.navbar .navLink a:hover {
+    color: royalblue !important;
+} 

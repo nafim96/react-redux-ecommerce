@@ -20,13 +20,13 @@ const Products = () => {
         loadProducts();
     }, []);
     return (
-        <div style={{ marginTop: '50px' }}>
+        <section style={{paddingBottom: '50px'}}>
             <div className="container">
                 <div className="row">
                     <SingleProducts />
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

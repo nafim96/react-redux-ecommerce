@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap');
+body {
+    background: royalblue;
+    font-family: 'Goldman', cursive;
+}
+.App {
+    background: rgb(0, 238, 255);
+    margin: 30px;
+    border-radius: 20px;
+
+}
+section {
+    margin: 50px 0;
+}

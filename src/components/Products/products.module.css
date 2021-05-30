@@ -4,10 +4,11 @@
     border-radius: 6px;
     text-align: center;
     margin: 15px;
+    background: whitesmoke;
     }
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
 }
 .card a {
     text-decoration: none !important;
@@ -17,7 +18,7 @@
     height: 250px;
     padding: 30px;
 }
-.card .cardImg img {height: 100%;}
+.card .cardImg img {height: 100%; width: 80%;}
 
 .details {
     border: 1px solid #ddd;
